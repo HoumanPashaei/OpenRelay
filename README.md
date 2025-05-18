@@ -17,13 +17,13 @@ Before running the tool, scan the server to discover which port is used for SMTP
 ### Use Nmap:
 
 ```bash
-nmap -sS -p- --open --max-rate 100 -T2 --script smtp-commands,smtp-open-relay -Pn smtp.example.com
+nmap -sS -p- --open --max-rate 100 -T2 --script smtp-commands,smtp-open-relay -Pn mail.domain.tld
 ```
 
 If you're in a hurry, scan only common SMTP ports:
 
 ```bash
-nmap -sS -p 25,465,587,2525,1025,8025,26 --script smtp-commands,smtp-open-relay -Pn smtp.example.com
+nmap -sS -p 25,465,587,2525,1025,8025,26 --script smtp-commands,smtp-open-relay -Pn mail.domain.tld
 ```
 
 ---
@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ### 2. Run the Checker
 
 ```bash
-python relay_checker.py --server smtp.example.com --port 25 --sender fake@evil.com --receiver you@gmail.com
+python relay_checker.py --server mail.domain.tld --port 25 --sender info@domain.tld --receiver your_mail@gmail.com
 ```
 
 ---
@@ -82,12 +82,6 @@ relay_checker.py     # Main script
 requirements.txt     # Python dependencies
 README.md            # You're reading it
 ```
-
----
-
-## 📜 License
-
-MIT License
 
 ---
 
