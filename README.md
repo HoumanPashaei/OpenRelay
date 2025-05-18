@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ### 2. Run the Checker
 
 ```bash
-python relay_checker.py --server mail.domain.tld --port 25 --sender info@domain.tld --receiver your_mail@gmail.com
+python relay_checker.py --server mail.domain.tld --port 25 --sender victim@domain.tld --receiver attacker@mail.com
 ```
 
 ---
@@ -57,13 +57,13 @@ python relay_checker.py --server mail.domain.tld --port 25 --sender info@domain.
 ## ✋ Manual Test (Telnet)
 
 ```bash
-telnet smtp.example.com 25
+telnet mail.domain.tld 25
 ```
 
 ```
 HELO test.com
-MAIL FROM:<attacker@evil.com>
-RCPT TO:<your.email@gmail.com>
+MAIL FROM:<victim@domain.tld>
+RCPT TO:<attacker@mail.com>
 DATA
 Subject: Open Relay Test
 
