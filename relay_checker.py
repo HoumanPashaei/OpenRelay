@@ -31,10 +31,10 @@ This is a test email to check for open SMTP relay.
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SMTP Open Relay Checker")
-    parser.add_argument("--server", required=True, help="SMTP server (e.g., smtp.domain.tld)")
-    parser.add_argument("--port", type=int, default=25, help="SMTP port (default: 25)")
-    parser.add_argument("--sender", required=True, help="Fake sender email address")
-    parser.add_argument("--receiver", required=True, help="Receiver email address")
+    parser.add_argument("--server", required=True, help="SMTP Server (e.g., smtp.domain.tld)")
+    parser.add_argument("--port", type=int, default=25, help="SMTP Port (default: 25)")
+    parser.add_argument("--sender", required=True, help="Victim sender Email Address")
+    parser.add_argument("--receiver", required=True, help="Receiver Email Address")
 
     args = parser.parse_args()
     check_open_relay(args.server, args.port, args.sender, args.receiver)
